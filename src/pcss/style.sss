@@ -1,0 +1,1820 @@
+$mobile: width <= 568px
+$mobile-from: width >= 568px
+$tablet: width <= 768px
+$tablet-from: width <= 768px
+$desktop: width <= 992px
+$desktop-from: width >= 992px
+$wide: width <= 1190px
+$wide-from: width >= 1190px
+$hd: width <= 1680px
+$hd-from: width >= 1680px
+
+$orange: #F07C00
+
+@media($wide)
+  body, html
+    min-width: 100%
+    max-width: 100%
+    width: 100%
+    box-sizing: border-box
+    overflow-x: hidden !important
+
+  .wrapper
+    min-width: 100%
+    box-sizing: border-box
+  .header
+    .menu
+      min-width: 100%
+      z-index: 10
+      &.active
+        ul
+          display: none
+
+  .wrap
+    // width: 1145px
+    width: 100%
+    min-width: 100%
+    padding-left: 15px
+    padding-right: 15px
+    box-sizing: border-box
+
+  .button_header
+    right: 15px
+
+  .header .menu ul:before
+    cursor: pointer
+    display: none
+    // as pseudo not working for js
+
+  .hamburger-desktop
+    display: block
+    content: ' '
+    position: absolute
+    width: 25px
+    height: 17px
+    left: -39px
+    cursor: pointer
+    background: transparent
+
+  .main_header_block
+    display: block
+    position: relative
+    width: 100%
+
+  .header .logo
+    display: inline-block
+    top: auto
+    left: auto
+    margin-top: 75px
+    width: 35%
+    padding-left: 55px
+  .block_mail
+    display: inline-block
+    margin-top: 78px
+    top: auto
+    left: auto
+    width: 25%
+  .block_phone
+    display: inline-block
+    top: auto
+    left: auto
+    margin-top: 78px
+    width: 300px
+    margin-left: 5%
+  .plashka
+    z-index: 2
+
+
+@media(width <= 1130px)
+  .header .menu ul li:nth-child(7)
+    display: none
+@media(width <= 1010px)
+  .header .menu ul li:nth-child(6)
+    display: none
+@media(width <= 910px)
+  .header .menu ul li:nth-child(5)
+    display: none
+@media(width <= 810px)
+  .header .menu ul li:nth-child(4)
+    display: none
+
+
+.header-mobile
+  display: none
+  position: absolute
+  top: 0
+  left: 0
+  height: 65px
+  width: 100%
+  z-index: 9
+  background: color(black a(80%))
+
+.mobile-menu
+  display: none
+  padding: 35px 25px 20px 65px
+  position: absolute
+  top: 0
+  left: 0
+  z-index: 8
+  &.active
+    display: block
+    position: absolute
+    top: 0
+    left: 0
+    background: black
+
+  ul
+    list-style: none
+    color: white
+    margin-top: 20px
+    hr
+      height: 1px
+      border: none
+      background: white
+      margin-top: 10px
+      margin-bottom: 10px
+    li
+      display: block
+      a
+        display: inline-block
+        line-height: 36px
+        color: white
+        text-decoration: none
+        font-size: 15px
+        font-family: ProximaNovaRegular
+        position: relative
+      &.active a
+        &::after
+          display: block
+          content: ' '
+          position: absolute
+          bottom: 0
+          left: 0
+          width: 100%
+          height: 2px
+          margin-top: 5px
+          background: #F07C00
+
+
+@media($tablet)
+  .header .menu
+    display: none
+  .header-mobile
+    display: block
+  .mobile-menu
+    ul
+      margin-top: 20px
+
+
+@media(width <= 1035px)
+  .header .logo
+    padding-left: 0px
+    width: 30%
+  .block_mail
+    width: 30%
+  .block_phone
+    float: right
+
+  .plashka
+    font-size: 16px
+    width: auto
+    padding: 10px 20px 0 20px
+  .plashka:before
+    display: none
+
+@media(width <= 870px)
+  .header .logo
+    width: 40%
+  .block_mail
+    width: 35%
+
+  .block_phone
+    width: auto
+  .block_phone .phone span
+    display: none
+
+  .plashka
+    font-size: 14px
+    padding: 10px 10px 0 10px
+  .menu_header_bottom ul li
+    margin: 0px 15px 0 10px
+
+// NEW ELEMENTS
+.hamburger
+  position: absolute
+  top: 15px
+  left: 20px
+  height: 35px
+  padding: 8px 5px
+  display: inline-block
+  cursor: pointer
+  transition-property: opacity, filter
+  transition-duration: 0.15s
+  transition-timing-function: linear
+  font: inherit
+  color: inherit
+  text-transform: none
+  border: 0
+  margin: 0
+  overflow: visible
+  @media($wide-from)
+    display: none
+  @media($wide)
+    background: transparent
+  @media($tablet)
+    background-color: $orange
+  &:hover
+    opacity: 0.7
+
+.hamburger-box
+  width: 22px
+  height: 15px
+  display: inline-block
+  position: relative
+
+.hamburger-inner
+  display: block
+  top: 50%
+  margin-top: -2px
+  width: 22px
+  height: 3px
+  background-color: white
+  border-radius: 0px
+  position: absolute
+  transition-property: transform
+  transition-duration: 0.15s
+  transition-timing-function: ease
+  &::before, &::after
+    width: 22px
+    height: 3px
+    background-color: white
+    border-radius: 0px
+    position: absolute
+    transition-property: transform
+    transition-duration: 0.15s
+    transition-timing-function: ease
+  &::before, &::after
+    content: ""
+    display: block
+  &::before
+    top: -10px
+  &::after
+    bottom: -10px
+
+.hamburger--elastic
+  .hamburger-inner
+    top: 2px
+    transition-duration: 0.4s
+    transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55)
+    &::before
+      top: 7px
+      transition: opacity 0.15s 0.4s ease
+    &::after
+      top: 14px
+      transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55)
+  &.is-active .hamburger-inner
+    transform: translate3d(0, 7px, 0) rotate(135deg)
+    transition-delay: 0.1s
+    &::before
+      transition-delay: 0s
+      opacity: 0
+    &::after
+      transform: translate3d(0, -14px, 0) rotate(-270deg)
+      transition-delay: 0.1s
+
+.mobile-call
+  display: block
+  background: #F5A623 url('https://dpmango.github.io/steel/src/images/mobile-call.svg') no-repeat center
+  width: 35px
+  height: 35px
+  position: absolute
+  top: 15px
+  left: 60px
+  transition: all .4s ease
+  &:hover
+    opacity: .7
+
+.mobile-email
+  display: block
+  background: #6A6A6A url('https://dpmango.github.io/steel/src/images/mobile-email.svg') no-repeat center
+  width: 35px
+  height: 35px
+  position: absolute
+  top: 15px
+  left: 105px
+  transition: all .4s ease
+  &:hover
+    opacity: .7
+
+
+@media($tablet)
+  .header
+    height: 240px
+    background-size: cover
+    &:after
+      display: block
+      content: ' '
+      height: 80px
+      width: 100%
+      position: relative
+      top: 65px
+      background: linear-gradient(to top, color(black a(0%)), color(black a(80%)) )
+      z-index: 1
+
+  .header .logo
+    margin-top: 0
+    height: 42px
+    position: absolute
+    top: 70px
+    width: auto
+    left: 50%
+    right: auto
+    transform: translateX(-50%)
+    background: url('https://dpmango.github.io/steel/src/images/logo-mobile.png') no-repeat center
+    z-index: 3
+    &::after
+      display: block
+      content: ' '
+      background: url('https://dpmango.github.io/steel/src/images/logo-mobile-name.png') no-repeat center
+      width: 216px
+      height: 26px
+      color: white
+      text-transform: uppercase
+      text-align: center
+      margin-top: 50px
+    img
+      display: none
+
+  .block_phone
+    display: none
+  .block_mail
+    display: none
+  .plashka
+    top: 160px
+    font-size: 19px
+    line-height: 29px
+    left: 50%
+    right: auto
+    transform: translateX(-50%)
+    height: auto
+    width: 100%
+    background: transparent
+    padding: 0
+    span
+      display: inline-block
+      background: #f07c00
+      &:nth-child(odd)
+        padding-left: 25px
+        padding-right: 25px
+        margin-bottom: 3px
+      &:nth-child(even)
+        font-size: 18px
+        padding-left: 5px
+        padding-right: 5px
+
+  .menu_header_bottom
+    display: none
+
+@media($mobile)
+  .button_header
+    padding-left: 18px
+    padding-right: 20px
+    width: auto
+
+// CONTENT
+@media($wide)
+  .content_block_image
+    font-size: 0
+  .block1
+    .block_left
+      width: 67%
+      margin-right: 0
+      overflow: hidden
+
+    // .block_left > div > a
+    //   width: 100%
+
+    .block_right
+      width: 32%
+      float: right
+      overflow: hidden
+
+    // .block_right > div > a
+    //   width: 100%
+
+  .block2
+    display: flex
+    .block_image
+      flex: 1 1 33%
+      overflow: hidden
+
+  #slider_1
+    width: 100%
+    padding-left: 30px
+    padding-right: 30px
+    background: #Fff
+    left: 50%
+    margin-left: auto
+    transform: translateX(-50%)
+    top: 8px
+    .viewport
+      width: 95%
+      margin: 0 auto
+  .block_partners .buttons.prev
+    left: 15px
+  .block_partners .buttons.next
+    right: 15px
+
+  .footer
+    min-width: auto
+
+  .footer_menu
+    width: auto
+    margin-left: 50%
+
+@media(width <= 900px)
+  .cataloglist .info
+    font-size: 14px
+    line-height: 1.25em
+@media(width <= 875px)
+  .about iframe
+    width: 100%
+
+@media($tablet)
+  .block1
+    height: 280px
+    .block_left
+      width: 49%
+      height: 280px
+    .block_right
+      width: 49%
+      height: 280px
+    .block_left > div > a
+      height: 130px
+      img
+        height: 130px
+    .block_right > div > a
+      height: 130px
+      img
+        height: 130px
+
+  .block2
+    display: block
+    height: 280px
+    .block_image
+      width: 49%
+      float: left
+      margin: 0
+      height: 130px
+      margin-bottom: 10px
+      &:nth-child(odd)
+        float: left
+        margin-right: 2%
+      &:last-child
+        width: 49%
+  .block3
+    position: absolute
+    float: right
+    width: 49%
+    bottom: 10px
+    overflow: hidden
+    right: 0
+    height: 130px
+    margin-bottom: 0
+    a
+      overflow: hidden
+      display: block
+    img
+      width: 95%
+      height: 130px
+
+  .block1 .block_right .info, .block2 .info, .cataloglist .info
+    top: 30%
+
+  .block2 .cataloglist .info .titlehover
+    padding-bottom: 20px
+    margin-bottom: 20px
+
+  .cataloglist
+    .title
+      display: none
+    .info
+      opacity: 1
+      font-size: 0
+      .titlehover
+        font-size: 15px
+        line-height: 1
+        text-transform: uppercase
+        &:after
+          display: block
+          content: ' '
+          border: none
+          width: 12px
+          height: 13px
+          background: url("http://xn--80acdlqowoddfeccq5l.xn--p1ai/assets/theme/images/shape.png") no-repeat center
+
+  .about
+    font-size: 0
+
+  .footer .name
+    float: right
+  .footer_menu
+    float: left
+    margin-left: 0
+    height: auto
+    top: 7px
+
+@media($mobile)
+  .block_partners
+    height: 80px
+  #slider_1
+    .overview
+      top: -15px
+    .viewport
+      height: 80px
+      li
+        top: 5px
+        img
+          max-width: 110px
+          max-height: 55px
+  .block_partners .buttons.next
+    top: 30%
+  .block_partners .buttons.prev
+    top: 30%
+
+  .about
+    iframe
+      height: 400px
+
+  .footer
+    height: 105px
+    margin: -50px auto 0
+  .footer .name
+    float: left
+    top: 70px
+  .footer_menu
+    position: absolute
+    left: 10px
+    ul li
+      margin: 0px 10px
+
+@media(width <= 414px)
+  .about
+    iframe
+      height: 300px
+
+// Catalog
+
+@media($wide)
+  .main_block_katalog
+    width: 100%
+  .katalog_block_left
+    width: 75%
+  .katalog_block_right
+    width: 23%
+    .akzia
+      width: 100%
+      img
+        max-width: 100%
+  .right_menu
+    width: 100%
+    ul li
+      width: 100%
+  .for_price ul
+    margin-left: 100%
+    width: 260px
+  .katalog_block_left ul
+    display: flex
+    flex-wrap: wrap
+    justify-content: flex-start
+    align-items: flex-start
+    li
+      flex: 0 1 24%
+      margin: 0
+      margin-top: 5px
+      margin-bottom: 5px
+      margin-right: 1%
+      overflow: hidden
+      // img
+      //   width: 100%
+
+  .uslugi
+    float: left
+    margin-top: 80px
+    width: 100%
+    ul
+      display: flex
+      justify-content: space-between
+      flex-wrap: wrap
+      width: 100%
+      li
+        flex: 0 1 15.5%
+        width: auto
+        margin-left: .5%
+        margin-right: .5%
+        box-sizing: border-box
+        .scale
+          width: 100%
+          box-sizing: border-box
+          img
+            width: auto
+        .title_image
+          width: 100%
+
+
+  .deffects_button
+    // margin-left: 0
+    transform: translateX(-50%)
+
+@media($desktop)
+  .katalog_block_left ul
+    li
+      flex-basis: 32.3%
+  .uslugi
+    ul
+      justify-content: space-around
+      align-items: flex-start
+      li
+        flex: 0 1 180px
+
+@media(width <= 414px)
+  .uslugi
+    ul
+      li
+        flex: 0 1 47%
+
+@media($tablet)
+  .katalog_trub_bg
+    background: #181C20
+
+  .katalog_block_right
+    width: 100%
+    float: left
+    .akzia
+      display: none
+  .katalog_block_left
+    width: 100%
+  .katalog_block_left
+    ul
+      justify-content: space-between
+      li
+        flex-basis: 32%
+
+  .katalog_title
+    font-size: 22px
+    padding: 20px 15px 10px 15px
+  .katalog_info
+    font-size: 14px
+    line-height: 1.2em
+    border-bottom: none
+    padding: 10px 15px
+
+  // use flex to rearange order
+  .main_block_katalog
+    display: flex
+    flex-direction: column
+    flex-wrap: wrap
+    padding-top: 0
+    .katalog_block_left
+      order: 2
+    .katalog_block_right
+      order: 1
+    .uslugi
+      order: 3
+
+  .right_menu_title
+    cursor: pointer
+    transition: all .3s ease
+    position: relative
+    &.active
+      &::after
+        transform: rotate(180deg)
+    &::after
+      content: ''
+      color: #919192
+      position: absolute
+      background: url(http://xn--80acdlqowoddfeccq5l.xn--p1ai/assets/theme/images/path-139-copy-11.png) no-repeat center
+      width: 10px
+      height: 16px
+      transition: all 0.5s
+      right: 19px
+      top: 11px
+      font-size: 19px
+    &:hover
+      opacity: .7
+
+  .right_menu
+    &.active
+      > ul
+        display: block
+    > ul
+      display: none
+      > li
+        height: auto
+
+  .right_menu ul li.acitve:before
+    transform: rotate(90deg)
+
+  .for_price:hover
+    ul
+      display: none
+
+  .for_price ul
+    margin-left: 0
+    width: 100%
+    position: relative
+    margin-top: 0
+    li
+      background: color(white a(30%))
+
+    &.active
+      display: block !important
+
+  .uslugi ul li
+    flex: 0 1 130px
+    margin-bottom: 5px
+    margin-top: 5px
+    .scale
+      height: 130px
+    img
+      width: 100%
+      height: 130px
+
+
+@media($mobile)
+  .katalog_title
+    font-size: 19px
+    font-family: ProximaNovaBold
+    padding: 15px 0px
+  .katalog_info
+    padding: 0px 0px
+
+  .deffects_text
+    font-size: 14px
+  .deffects_button
+    left: auto
+    margin-left: 0
+    transform: translateX(0%)
+  .katalog_block_left
+    ul
+      justify-content: space-between
+      li
+        flex-basis: 47%
+        height: 130px
+        img
+          width: 100%
+          height: auto
+        a:before
+          opacity: 0
+          margin: 0
+          width: 100%
+          height: 100%
+          position: absolute 0 0 0 0
+          border: none
+          background: color(black a(50%))
+        a:hover:before
+          opacity: 1
+          margin: 0
+          width: 100%
+          height: 100%
+          position: absolute 0 0 0 0
+          border: none
+          background: color(black a(50%))
+      .namelist
+        top: 15px
+        margin-top: 0
+        z-index: 3
+      .size
+        z-index: 3
+      .weightlist
+        display: none
+        z-index: 3
+      .pricelist
+        font-size: 16px
+        line-height: 1
+        top: 80%
+        font-weight: 600
+        z-index: 3
+
+@media(width <= 414px)
+  .size
+    width: 120px
+    margin-left: -60px
+
+
+// Contact
+@media($mobile)
+  .text1_bg
+    background: #181C20
+
+  .title_text1
+    font-size: 19px
+    padding-bottom: 0
+    font-family: ProximaNovaBold
+
+  .text_top
+    font-size: 14px
+    padding-top: 7px
+    padding-bottom: 7px
+
+  ymaps#ymaps1484736243255514737
+    height: 220px !important
+
+
+// Good
+@media($wide)
+  .good .main_block_katalog
+    display: block
+  .about_products
+    width: 50%
+    box-sizing: border-box
+  .info_products
+    width: 100%
+    box-sizing: border-box
+  .info_products_title
+    width: 100%
+  .info_products_text
+    width: 100%
+    box-sizing: border-box
+  .info_products_price
+    margin-left: 0
+    left: auto
+    right: 0
+  .zakaz_zvonka
+    display: block
+  .list_calculator.inbox
+    width: 100%
+    box-sizing: border-box
+  .list_calculator.inbox .list_calculator_form .inpuut
+    position: relative
+
+  .list_calculator.inbox .list_calculator_form .inpuut input
+    width: auto
+    position: absolute
+    top: 5px
+    right: 0
+  #diameter
+    margin-right: 12%
+
+  .slider_text
+    width: 100%
+    box-sizing: border-box
+
+  .img_irr
+    width: 47%
+    float: left
+
+  .slider-for
+    width: 380px
+  .slick-next
+    right: 0
+  .slider-nav
+    width: 380px
+    overflow: hidden
+  .slider-nav img
+    width: auto
+    height: auto
+
+  .katalog_block_left
+    .more
+      width: 100%
+      box-sizing: border-box
+      ul
+        width: 100%
+        box-sizing: border-box
+        display: flex
+        flex-wrap: nowrap
+        li
+          flex: 0 1 24%
+          width: auto
+          img
+            width: 100%
+            height: auto
+
+            max-width: 100%
+
+
+      .more_title
+        margin-bottom: 25px
+      .more_button
+        position: absolute
+        top: -5px
+        right: 0
+        margin-left: 0
+        max-height: 30px
+        overflow: hidden
+        box-sizing: border-box
+
+  .good .content .wrap
+    &:last-child
+      &::after, &::before
+        display: block
+        clear: both
+        content: ' '
+
+
+@media(width <= 1050px)
+  .slider-for
+    width: 340px
+  .slider-nav img
+    height: auto
+    max-width: 70px
+
+
+  .slider-nav
+    width: 340px
+
+@media(width <= 920px)
+  .slider-for
+    width: 310px
+  .slider-nav
+    width: 310px
+  .slider-nav img
+    max-width: 60px
+
+@media(width <= 870px)
+  .info_products_price
+    display: block
+    position: relative
+    width: auto
+    text-align: center
+    top: auto
+
+@media($desktop)
+  .katalog_block_left
+    .more
+      height: auto
+      ul
+        flex-wrap: wrap
+        justify-content: space-between
+        height: auto
+        li
+          flex: 0 1 47%
+          width: 48%
+          img
+            width: 100%
+  .zakaz_zvonka
+    width: 92%
+    box-shadow: border-box
+  .list_calculator.inbox .list_calculator_form .inpuut_sub .submit
+    width: 100%
+
+.good-mobile-slider
+  display: none !important
+
+@media($tablet)
+  .img_irr
+    display: none
+  .katalog_block_left
+    width: 100%
+  .about_products
+    width: 100%
+
+  .info_products_price
+    max-width: 200px
+
+  // slider (new element)
+  .good-mobile-slider
+    display: block !important
+    position: relative
+    &-wrap
+      position: relative
+
+    &-count
+      display: none
+    img
+      width: 100%
+      height: auto
+      padding: 0
+      margin: 0
+
+
+
+  .good
+    .content.katalog_trub_bg
+      background: white
+    .katalog_title
+      display: none
+    .katalog_info
+      display: none
+    .slider_text
+      display: none
+    .menu_top ul li
+      border-color: #ACACAC
+      a
+        color: color(black a(60%))
+    .menu_top ul li.active, .menu_top ul li:hover
+      border-color: #f07c00 !important
+      a
+        color: white !important
+
+  .good .content .wrap
+    &:last-child
+      display: none
+      &::after, &::before
+        display: none
+
+  .more_title
+    display: none
+  .more_button
+    display: none
+
+  .good .more ul
+    background: white
+    padding: 0
+  .about_products
+    min-height: auto
+
+
+  .good .breadcrumbs
+    display: none
+
+@media($mobile)
+  .katalog_block_left .more ul li
+    flex: 1 1 45%
+  .good-mobile-slider
+    &-count
+      display: block
+      position: absolute
+      bottom: 0
+      right: 5px
+      background: #BBBBBB
+      padding: 10px
+      color: white
+      z-index: 999
+      span
+        font-size: 12px
+        vertical-align: 10px
+        display: inline-block
+        padding-right: 1px
+        &::after
+          display: inline-block
+          content: ' / '
+          font-size: 20px
+          position: absolute
+          top: 50%
+          left: 50%
+          transform: translate(-50%, -50%)
+        &:last-child
+          font-size: 20px
+          vertical-align: -5px
+          margin-right: -5px
+  .good
+    .about_products
+      padding: 0
+    .info_products_text
+      padding-left: 0
+      padding-right: 0
+    .zakaz_zvonka
+      padding-left: 0
+      margin-left: 0
+      width: 100%
+    .list_calculator.inbox  .list_calculator_title
+      font-size: 19px
+      padding-left: 0
+      padding-right: 0
+    .list_calculator.inbox .list_calculator_form .inpuut
+      padding-left: 0
+      padding-right: 0
+
+    .list_calculator_form
+      margin-left: -15px
+      margin-right: -15px
+
+    .menu_top ul
+      li
+        display: inline-block
+        margin-right: 10px
+        &:last-child
+          margin-right: 0
+      a
+        font-size: 14px
+        padding-left: 10px
+        padding-right: 10px
+        display: inline-block
+
+// POPUP
+@media($tablet)
+  .popup_callback
+    width: 100%
+    left: 0
+    margin-left: 0
+    top: 0
+    .formtitle
+      font-size: 15px
+      line-height: 25px
+    .formsector
+      width: 95%
+      height: auto
+      label
+        display: block
+        width: 100%
+        text-align: left
+        float: none
+        font-size: 14px
+      input
+        width: 100%
+      .submit
+        width: 95%
+        text-align: center
+        margin: 3px auto
+        font-size: 15px
+        text-transform: uppercase
+
+
+// Partners
+@media($wide)
+  .srochno
+    float: left
+    width: 50%
+    background-repeat: no-repeat
+    display: inline-block
+  .form_kontakts
+    float: right
+    width: 50%
+    margin-left: 0
+    display: inline-block
+
+  .for_partners_main
+    margin-left: 7%
+    margin-right: 7%
+  .for_partners_block_left2
+    margin-left: 0
+    //width: 42%
+  .for_partners_block_right
+    margin-left: 543px
+
+@media(width <= 1090px)
+  .form_kontakts
+    label.name_size
+      width: 100%
+      margin-left: 0
+      input
+        opacity: 1
+    label.email_size
+      width: 50%
+      margin-left: 0
+    label.phone_size
+      width: 49%
+    button
+      width: calc(100% - 60px)
+      margin-left: 60px
+      box-sizing: border-box
+
+  .for_partners_main
+    margin-left: 3%
+    margin-right: 3%
+
+@media(width <= 1050px)
+  .for_partners_main
+    margin-left: auto
+    margin-right: auto
+@media(width <= 1030px)
+  .block_form
+    height: 360px
+  .srochno
+    width: auto
+    position: absolute
+    left: 50%
+    transform: translateX(-50%)
+  .form_kontakts
+    width: auto
+    position: absolute
+    top: 180px
+    left: 50%
+    transform: translateX(-50%)
+
+  .form_kontakts
+    float: none
+    margin-left: 0
+
+    label.name_size
+      width: 497px
+    label.email_size
+      width: 250px
+      margin-left: 0
+    label.phone_size
+      width: 240px
+    button
+      width: 435px
+      margin-left: 60px
+      box-sizing: border-box
+
+@media(width <= 1015px)
+  .for_partners_block_left2
+    display: inline-block
+  .for_partners_block_right
+    display: inline-block
+  .wrap.for_partners_main
+    display: block
+    box-sizing: border-box
+  .block_orange
+    width: 340px
+  .block_partners_1 > .block_orange:before
+    right: 50px
+  .text_block_partners
+    width: 415px
+  .block_partners_1 > .block_orange:after
+    right: -15px
+  .block_partnersline:after
+    right: 4px
+
+  .block_partners_3 > .block_orange:before
+    right: 50px
+  .block_partners_3 > .block_orange:after
+    right: -15px
+  .block_partners_5 > .block_orange:before
+    right: 50px
+  .block_partners_5 > .block_orange:after
+    right: -15px
+
+  .for_partners_block_right
+    margin-left: 499px
+  .block_partners_2 > .block_orange
+    width: 340px
+
+  .payto
+    left: 502px
+
+  .stepen
+    left: 550px
+
+@media(width <= 960px)
+  .for_partners_main
+    margin-left: 5%
+
+  .for_partners_title
+    font-size: 28px
+
+
+  .block_orange
+    width: 300px
+  .block_partners_1 > .block_orange:before
+    right: 80px
+  .text_block_partners
+    width: 375px
+  .block_partners_1 > .block_orange:after
+    right: 27px
+  .block_partnersline:after
+    right: 45px
+
+  .block_partners_3 > .block_orange:before
+    right: 100px
+  .block_partners_3 > .block_orange:after
+    right: 27px
+  .block_partners_5 > .block_orange:before
+    right: 100px
+  .block_partners_5 > .block_orange:after
+    right: 27px
+
+  .for_partners_block_right
+    margin-left: 457px
+  .block_partners_2 > .block_orange
+    width: 300px
+  .block_partners_4 > .block_orange
+    width: 380px
+    box-sizing: border-box
+    padding-top: 15px
+    padding-bottom: 10px
+
+  .payto
+    left: 452px
+    width: 360px
+
+  .stepen
+    left: 500px
+    height: auto
+    text-align: center
+    width: 300px
+
+@media(width <= 930px)
+  .for_partners_main
+    margin-left: 2%
+
+@media(width <= 890px)
+  .for_partners_main
+    margin-left: 0%
+
+@media(width <= 870px)
+  .for_partners_main
+    margin-left: 10%
+
+  .block_orange
+    width: 230px
+  .block_partners_1 > .block_orange:before
+    right: 150px
+  .text_block_partners
+    width: 300px
+  .block_partners_1 > .block_orange:after
+    right: 100px
+  .block_partnersline:after
+    right: 119px
+
+  .block_partners_3 > .block_orange:before
+    right: 170px
+  .block_partners_3 > .block_orange:after
+    right: 100px
+  .block_partners_5 > .block_orange:before
+    right: 170px
+  .block_partners_5 > .block_orange:after
+    right: 100px
+
+  .for_partners_block_right
+    margin-left: 383px
+  .block_partners_2 > .block_orange
+    width: 300px
+    box-sizing: border-box
+  .block_partners_4 > .block_orange
+    width: 300px
+    box-sizing: border-box
+    padding-top: 15px
+    padding-bottom: 10px
+
+  .payto
+    left: 380px
+    width: 280px
+    padding-right: 0
+
+  .stepen
+    left: 435px
+    height: auto
+    text-align: center
+    width: 250px
+    box-sizing: border-box
+
+@media(width <= 840px)
+  .for_partners_main
+    margin-left: 7%
+
+@media(width <= 810px)
+  .for_partners_main
+    margin-left: 4%
+
+@media(width <= 780px)
+  .for_partners_main
+    margin-left: 2%
+
+
+@media($tablet)
+  .for_partners_title
+    font-size: 24px
+    padding: 20px 0
+  .for_partners_main
+    margin-left: 0
+
+  .srochno_title
+    font-size: 22px
+    margin-left: 90px
+  .srochno_text
+    margin-left: 90px
+    padding-bottom: 50px
+
+  .wrap.for_partners_main
+    transform: scale(.8)
+    margin-left: 0%
+    margin-top: -30%
+    margin-bottom: -30%
+
+@media(width <= 720px)
+  .wrap.for_partners_main
+    margin-left: -3%
+@media(width <= 690px)
+  .wrap.for_partners_main
+    margin-left: -5%
+
+@media(width <= 640px)
+  .wrap.for_partners_main
+    margin-left: -7%
+
+@media(width <= 610px)
+  .wrap.for_partners_main
+    margin-left: -10%
+
+.for_partners_main-mobile
+  display: none !important
+
+@media($mobile)
+  .srochno
+    position: relative
+    width: 100%
+    float: left
+    left: auto
+    transform: translateX(0)
+    padding-left: 15px
+    padding-right: 15px
+    box-sizing: border-box
+    margin-left: 0px
+    background-size: contain
+    &:before
+      margin-left: 15px
+  .form_kontakts
+    width: 100%
+    padding-left: 15px
+    padding-right: 15px
+    box-sizing: border-box
+
+  .block_form
+    height: 490px
+  .form_kontakts label.name_size
+    width: 100%
+    input
+      display: block
+      width: 100%
+      margin-left: 0
+      margin-top: 5px
+  .form_kontakts label.email_size
+    width: 100%
+    margin-top: 10px
+    input
+      top: 0
+      display: block
+      width: 100%
+      margin-left: 0
+      margin-top: 5px
+  .form_kontakts label.phone_size
+    width: 100%
+    margin-top: 0px
+    text-align: left
+    margin-left: -3px
+    input
+      display: block
+      width: 100%
+      top: 0
+      margin-left: 0
+      margin-top: 5px
+
+  .form_kontakts button
+    margin-left: 0
+    width: 100%
+    margin-top: 20px
+
+  .srochno_title
+    font-size: 16px
+  .srochno_text
+    font-size: 16px
+    font-weight: 600
+
+  .for_partners_text
+    font-size: 14px
+
+  .wrap.for_partners_main
+    transform: scale(1)
+    margin: 0
+    display: none
+
+  .for_partners_text
+    display: none
+
+  // mobile steps.
+  .slide
+    &:focus, .active
+      outline: none
+  .for_partners_main-mobile
+    display: block !important
+
+    .slick-next
+      top: 20px
+      right: 15px
+      background: none
+      &::before
+        background: none
+        color: white
+        content: '>'
+        font-size: 42px
+        opacity: 1
+
+    .slick-prev
+      display: none !important
+      &::before
+        display: none
+
+    .steps-slider
+      .slide
+        overflow: hidden
+
+  .block_orange
+    width: 80%
+    margin-left: -15px
+    margin-bottom: 20px
+    padding-right: 15%
+
+  .for_partners_block_right
+    margin-left: 0px
+
+  .block_partnersline:after
+    display: none
+
+  .block_partners_1 > .block_orange:before
+    right: 10%
+  .block_partners_1 > .block_orange:after
+    right: auto
+    left: 0
+    top: 84px
+
+  .block_partners_2 > .block_orange
+    width: 90%
+    margin-left: -15px
+    margin-bottom: 20px
+    padding-right: 15%
+    padding-left: 30px
+
+  .block_partners_2 > .block_orange:before
+    left: auto
+    padding-left: 0
+    text-align: right
+    right: 15%
+  .block_partners_2 > .block_orange:after
+    right: auto
+    left: 0
+    top: 94px
+
+  .block_partners_3 > .block_orange:before
+    left: auto
+    padding-left: 0
+    text-align: right
+    right: 10%
+  .block_partners_3 > .block_orange:after
+    right: auto
+    left: 0
+    top: 84px
+
+  .block_partners_4 > .block_orange
+    width: 90%
+    margin-left: -15px
+    margin-bottom: 20px
+    padding-right: 15%
+    padding-left: 30px
+    height: 75px
+    padding-top: 25px
+
+  .block_partners_4 > .block_orange:before
+    left: auto
+    padding-left: 0
+    text-align: right
+    right: 15%
+  .block_partners_4 > .block_orange:after
+    right: auto
+    left: 0
+    top: 84px
+
+  .block_partners_5 > .block_orange:before
+    left: auto
+    padding-left: 0
+    text-align: right
+    right: 15%
+  .block_partners_5 > .block_orange:after
+    right: auto
+    left: 0
+    top: 84px
+
+  .text_block_partners
+    margin-top: 40px
+    width: 100%
+    margin-left: 10px
+    margin-right: 10px
+    box-sizing: border-box
+    p
+      text-align: left
+      padding: 6px 0
+    p:before
+      display: none
+
+  .block_partners_2
+    width: 100%
+
+  .for_partners_block_left2
+    width: 100%
+
+  .steps_path
+    position: relative
+    background: url('https://dpmango.github.io/steel/src/images/mobile-path.png') repeat-x center
+    min-height: 20px
+    min-width: 100%
+    margin-left: 40px
+    label
+      position: absolute
+      top: 25px
+      &:nth-child(1)
+        left: 20%
+      &:nth-child(2)
+        left: 40%
+      &:nth-child(3)
+        left: 60%
+      &:nth-child(4)
+        left: 80%
+      &:nth-child(5)
+        left: 90%
+      img
+        display: inline-block
+      &::before
+        position: absolute
+        top: -20px
+        left: 7px
+        background: white
+        border-radius: 50%
+        width: 10px
+        height: 10px
+        display: block
+        content: ' '
+
+    &--five
+      label
+        &:nth-child(1)
+          left: 17%
+        &:nth-child(2)
+          left: 34%
+        &:nth-child(3)
+          left: 51%
+        &:nth-child(4)
+          left: 68%
+        &:nth-child(5)
+          left: 87%
+  .payto
+    position: relative
+    left: 0px
+    width: 100%
+    padding-right: 0
+    box-sizing: border-box
+    margin-bottom: 10px
+    display: inline-block
+
+  .stepen
+    position: relative
+    left: 0px
+    height: auto
+    text-align: center
+    width: 80%
+    box-sizing: border-box
+    margin-bottom: 10px
+    display: inline-block
+
+
+@media(width <=450px)
+  .srochno
+    &:before
+      margin-left: 10px
+      margin-top: 45px
+  .srochno_title
+    margin-left: 80px
+    padding-top: 20px
+  .srochno_text
+    margin-left: 80px
+
+@media(width <= 413px)
+  .srochno
+    height: auto
+    margin-bottom: 0
+    &:before
+      margin-left: 0px
+      margin-top: 30px
+      font-size: 5em
+  .srochno_title
+    margin-left: 50px
+    padding-top: 10px
+    font-size: 15px
+    padding-bottom: 10px
+  .srochno_text
+    margin-left: 50px
+    font-size: 13px
+    font-weight: 400
+    line-height: 1.1em
+
+  .form_kontakts
+    margin-top: -30px
+
+  .for_partners_title
+    font-size: 19px
+
+  .block_orange
+    width: 70%
+
+  .text_block_partners
+    width: 95%
+  .for_partners_block_right
+    margin-left: 0px
+
+  .block_partners_1 > .block_orange:before
+    right: 15%
+
+
+  .block_partners_2 > .block_orange
+    width: 90%
+    font-size: 14px
+
+  .block_partners_2 > .block_orange:before
+    right: 20%
+  .block_partners_2 > .block_orange:after
+    top: 130px
+
+  .block_partners_3 > .block_orange p
+    display: inline-block
+    padding-right: 20px
+
+  .block_partners_3 > .block_orange:before
+    right: 23%
+  .block_partners_3 > .block_orange:after
+    top: 84px
+
+  .block_partners_4 > .block_orange
+    width: 90%
+    margin-left: -15px
+    margin-bottom: 20px
+    padding-right: 15%
+    height: 75px
+    padding-top: 20px
+
+  .block_partners_4 > .block_orange:before
+    left: auto
+    padding-left: 0
+    text-align: right
+    right: 20%
+  .block_partners_4 > .block_orange:after
+    right: auto
+    left: 0
+    top: 84px
+
+  .block_partners_5 > .block_orange:before
+    right: 20%
+  .block_partners_5 > .block_orange:after
+    right: auto
+
+// Zavod
+
+@media($wide)
+  .zavod_bg
+    .uslugi
+      float: none
+      margin-top: 0
+      padding-top: 0
+      height: auto
+
+  .zavod_image
+    img
+      width: 45%
+      box-sizing: border-box
+      margin-left: 2%
+      margin-right: 2%
+      &:nth-child(even)
+        float: right
+
+.zavod_image-mobile
+  display: none !important
+
+@media($mobile)
+  .zavod_image
+    display: none
+    img
+      width: auto
+      float: none
+      margin-left: 0
+      margin-right: 0
+      max-width: 100%
+      &:nth-child(even)
+        float: none
+  .zavod_image-mobile
+    display: block !important
+    padding-left: 30px
+    padding-right: 30px
+    margin-top: 15px
+
+
+    .slick-next, .slick-prev
+      font-size: 0
+      background: none
+      &::after
+        display: block
+        position: absolute
+        width: 39px
+        color: #333
+        font-weight: bold
+        text-align: center
+        line-height: 35px
+        text-decoration: none
+        z-index: 1
+
+    .slick-prev
+      left: 0
+      opacity: 1
+      &::after
+        content: '<'
+    .slick-next
+      right: 0
+      opacity: 1
+      &::after
+        content: '>'
+
+
+// text
+@media($wide)
+  .main_block_katalog
+    width: 100%
+
+@media($desktop)
+  .right_menu ul li:before
+    background-position-x: right
+    right: 10px
+@media($mobile)
+  .katalog_info img
+    width: 100%
+    height: auto
+    margin-bottom: 15px
