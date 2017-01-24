@@ -64,6 +64,9 @@ $(document).ready(function(){
 
   $('#slickTotal').text(countSlides);
 
-  $('.steps-slider').slick();
+  $('.steps-slider').slick({
+    'adaptiveHeight': true,
+    'infinite': false
+  });
 
 });

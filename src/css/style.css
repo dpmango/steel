@@ -1,3 +1,19 @@
+.hidden-xs {
+  display: block;
+}
+  @media(max-width: 768px) {
+  .hidden-xs {
+    display: none;
+  }
+}
+.visible-xs {
+  display: none;
+}
+@media(max-width: 768px) {
+  .visible-xs {
+    display: block;
+  }
+}
 @media(max-width: 1190px) {
   body, html {
     overflow-x: hidden !important;
@@ -660,7 +676,20 @@
     content: ' ';
   }
   .about {
-    font-size: 0;
+    margin-bottom: 10px;
+    text-align: left;
+  }
+  .about h1 {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+  .about p {
+    margin-bottom: 10px;
+  }
+  .about h2 {
+    margin-bottom: 10px;
+    text-align: left !important;
   }
   .footer .name {
     float: right;
@@ -695,6 +724,21 @@
   }
   .block_partners .buttons.prev {
     top: 30%;
+  }
+  .block3 {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    float: none;
+    overflow: hidden;
+    margin-bottom: 0;
+    width: 100%;
+    height: 130px;
+  }
+  .block3 img {
+    max-width: 100%;
+    width: 100%;
+    height: 130px;
   }
   .about iframe {
     height: 400px;
@@ -1015,10 +1059,16 @@
     padding: 0px 0px;
   }
   .deffects_text {
+    padding-bottom: 60px;
     font-size: 14px;
   }
   .deffects_button {
+    position: absolute;
+    top: auto;
+    bottom: 0;
     left: auto;
+    display: inline-block;
+    margin-top: -40px;
     margin-left: 0;
     -webkit-transform: translateX(0%);
         -ms-transform: translateX(0%);
@@ -1374,10 +1424,23 @@
     display: none;
   }
   .more_title {
-    display: none;
+    display: block;
+    float: none;
+    color: #333;
   }
   .more_button {
-    display: none;
+    position: relative;
+    top: auto;
+    right: auto;
+    display: block;
+    float: none;
+  }
+  .katalog_block_left .more .more_button {
+    position: relative;
+    top: auto;
+    right: auto;
+    display: block;
+    float: none;
   }
   .good .more ul {
     padding: 0;
@@ -1571,7 +1634,7 @@
 }
 @media(max-width: 1030px) {
   .block_form {
-    height: 360px;
+    height: 380px;
   }
   .srochno {
     position: absolute;
@@ -1585,7 +1648,7 @@
     position: absolute;
     top: 180px;
     left: 50%;
-    width: auto;
+    width: 500px;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -1896,7 +1959,7 @@
     width: 100%;
   }
   .block_form {
-    height: 490px;
+    height: 510px;
   }
   .form_kontakts label.name_size {
     width: 100%;
@@ -1981,8 +2044,14 @@
   .for_partners_main-mobile .slick-prev::before {
     display: none;
   }
+  .for_partners_main-mobile .steps-slider {
+    padding-bottom: 30px;
+  }
   .for_partners_main-mobile .steps-slider .slide {
     overflow: hidden;
+  }
+  .for_partners_main-mobile .steps-slider .stepen {
+    width: 100%;
   }
   .block_orange {
     margin-bottom: 20px;
@@ -2293,6 +2362,9 @@
 }
 
 @media(max-width: 568px) {
+  .zavod_bg .katalog_info p {
+    text-align: left !important;
+  }
   .zavod_image {
     display: none;
   }
