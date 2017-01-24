@@ -1,7 +1,13 @@
+* {
+  -webkit-overflow-scrolling: touch;
+}
+  
 .hidden-xs {
   display: block;
 }
-  @media(max-width: 768px) {
+  
+@media(max-width: 768px) {
+  
   .hidden-xs {
     display: none;
   }
@@ -10,6 +16,7 @@
   display: none;
 }
 @media(max-width: 768px) {
+  
   .visible-xs {
     display: block;
   }
@@ -271,16 +278,19 @@
   transition-property: opacity, filter, -webkit-filter;
 }
 @media(min-width: 1190px) {
+  
   .hamburger {
     display: none;
   }
 }
 @media(max-width: 1190px) {
+  
   .hamburger {
     background: transparent;
   }
 }
 @media(max-width: 768px) {
+  
   .hamburger {
     background-color: #F07C00;
   }
@@ -393,7 +403,7 @@
   display: block;
   width: 35px;
   height: 35px;
-  background: #F5A623 url('http://localhost:3000/images/mobile-call.svg') no-repeat center;
+  background: #F5A623 url('http://f-end.ru/demo/0117-steel/images/mobile-call.svg') no-repeat center;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
@@ -409,7 +419,7 @@
   display: block;
   width: 35px;
   height: 35px;
-  background: #6A6A6A url('http://localhost:3000/images/mobile-email.svg') no-repeat center;
+  background: #6A6A6A url('http://f-end.ru/demo/0117-steel/images/mobile-email.svg') no-repeat center;
   -webkit-transition: all .4s ease;
   transition: all .4s ease;
 }
@@ -445,7 +455,7 @@
     margin-top: 0;
     width: auto;
     height: 42px;
-    background: url('http://localhost:3000/images/logo-mobile.png') no-repeat center;
+    background: url('http://f-end.ru/demo/0117-steel/images/logo-mobile.png') no-repeat center;
     -webkit-transform: translateX(-50%);
         -ms-transform: translateX(-50%);
             transform: translateX(-50%);
@@ -458,7 +468,7 @@
     margin-top: 50px;
     width: 216px;
     height: 26px;
-    background: url('http://localhost:3000/images/logo-mobile-name.png') no-repeat center;
+    background: url('http://f-end.ru/demo/0117-steel/images/logo-mobile-name.png') no-repeat center;
     color: white;
     content: ' ';
     text-align: center;
@@ -2159,7 +2169,7 @@
     margin-left: 40px;
     min-width: 100%;
     min-height: 20px;
-    background: url('http://localhost:3000/images/mobile-path.png') repeat-x center;
+    background: url('http://f-end.ru/demo/0117-steel/images/mobile-path.png') repeat-x center;
   }
   .steps_path label {
     position: absolute;
